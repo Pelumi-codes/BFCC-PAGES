@@ -1,32 +1,29 @@
-import React from 'react'
+import Contact_Us from "Pages/Contact_Us";
+import FAQ from "Pages/FAQ";
+import Landing from "Pages/Landing";
+import Policy_Privacy from "Pages/Policy_Privacy";
+import React from "react";
 import {
   BrowserRouter as Router,
   Redirect,
   Route,
   Switch,
 } from "react-router-dom";
-import Header from './components/Header';
-import Evaluation from './components/Evaluation';
-import Interactions from 'components/Interactions';
-import Feedback  from 'components/Feedback';
-import Offer from 'components/Offer';
-import Learnings from 'components/Learnings';
-import Footer from 'components/Footer';
 
 function App() {
   return (
     <Router>
-       <div className="App">
-         <Header />
-         <Evaluation />
-         <Interactions />
-         <Offer /> 
-         <Feedback />
-         <Learnings />
-         <Footer />
-      </div>
+      <div>
+        <Switch>
+          {/* Sections */}
+          <Route exact path="/" component={Landing} />
+          <Route path="/faq" component={FAQ} />
+          <Route path="/contact-us" component={Contact_Us} />
+          <Route path="/policy-privacy" component={Policy_Privacy} />
+        </Switch>
+      </div>{" "}
+      mkio098•S
     </Router>
-   
   );
 }
 

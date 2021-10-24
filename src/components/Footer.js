@@ -1,5 +1,6 @@
 import Styled from "styled-components";
 import Spacer from "./Spacer";
+import { Link } from "react-router-dom";
 
 const Wrapper = Styled.div`
 background-color: var(--primary_main);
@@ -25,29 +26,28 @@ letter-spacing: 0em;
 }
 `;
 
-
 const Footer = () => {
-    return (
-        <Wrapper className="container">
-            <Spacer y={9.6} />
-            <div className="footerContact p1 flexRow alignCenter justifyCenter">
-                <a href ="/">Home</a>
-                <Spacer x={4.8} />
-                <a href ="/">Contact</a>
-                <Spacer x={4.8} />
-                <a href ="/">Help/FAQ</a>
-            </div>
-            <Spacer y={14.4} />
-            <div className="line">
-            <Spacer y={9.6} />
-                <div className="footerCaption flexRow justifySpaceBetween">
-                    <div className="footerCopyright">Copyright © 2021 BFCC, Inc. All rights reserved.</div>
-                    <p className="footerPolicy">Privacy policy</p>
-                </div>
-                
-            </div>
-            
-        </Wrapper>
-    )
+  return (
+    <Wrapper className="container">
+      <Spacer y={9.6} />
+      <div className="footerContact p1 flexRow alignCenter justifyCenter">
+        <Link to="/">Home</Link>
+        <Spacer x={4.8} />
+        <Link to="/contact-us">Contact Us</Link>
+        <Spacer x={4.8} />
+        <Link to="/faq">Help/FAQ</Link>
+      </div>
+      <Spacer y={14.4} />
+      <div className="line">
+        <Spacer y={9.6} />
+        <div className="footerCaption flexRow justifySpaceBetween">
+          <div className="footerCopyright">
+            Copyright © 2021 BFCC, Inc. All rights reserved.
+          </div>
+          <Link to="/policy-privacy">Privacy policy</Link>
+        </div>
+      </div>
+    </Wrapper>
+  );
 };
 export default Footer;

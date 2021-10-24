@@ -1,8 +1,8 @@
 import Spacer from "./Spacer";
 import Styled from "styled-components";
-import quote from "Images/quote.svg"
-import Star from "Images/Star.svg"
-import bgFeedback from "Images/bgFeedback.svg"
+import quote from "Images/quote.svg";
+import Star from "Images/Star.svg";
+import bgFeedback from "Images/bgFeedback.svg";
 
 const Wrapper = Styled.div`
 position: relative;
@@ -70,53 +70,60 @@ top: 102.5rem;
     text-align: center;
     width:90%;
 }
-`
+`;
 
 const Feedback = () => {
-    return (
-        <Wrapper className="feedbackWrapper">
-            <Spacer y={9.6} />
-            <img src={bgFeedback} alt="Cover" className= "coverImage"
-      />
-            <h2 className="feedbackCaption textCenter">What learners and <br /> parents are saying </h2>
-            <Spacer y={2.4} />
-            <div className="miniFeedbackCaption t1 textCenter">Hear it from them</div>
-            <div className="feedbackCards">
-                <div className="card">
-                    <img src={quote} alt="Two Quotes" className="quotes" />
-                    <Spacer y={2.4} />
-                    <h4 className="feedbackQuotes textCenter">BEST ASSESSMENT SYSTEM</h4>
-                    <img src={Star} alt="Stars" className="stars" />
-                    <div className="feedbackParagraph">Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. 
-                        Sunt qui esse pariatur duis deserunt mollit dolore cillum minim tempor enim. Elit aute irure tempor cupidatat incididunt sint deserunt ut voluptate aute id deserunt nisi.
-                        Elit aute irure tempor cupidatat incididunt sint deserunt ut voluptate aute id deserunt nisi.
-                    </div>
-                </div> 
-                <div className="card">
-                    <img src={quote} alt="Two Quotes" className="quotes" />
-                    <Spacer y={2.4} />
-                    <h4 className="feedbackQuotes textCenter">BEST ASSESSMENT SYSTEM</h4>
-                    <img src={Star} alt="Stars" className="stars" />
-                    <div className="feedbackParagraph">Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. 
-                        Sunt qui esse pariatur duis deserunt mollit dolore cillum minim tempor enim. Elit aute irure tempor cupidatat incididunt sint deserunt ut voluptate aute id deserunt nisi.
-                        Elit aute irure tempor cupidatat incididunt sint deserunt ut voluptate aute id deserunt nisi.
-                    </div>
-                </div>
-                <div className="card">
-                    <img src={quote} alt="Two Quotes" className="quotes" />
-                    <Spacer y={2.4} />
-                    <h4 className="feedbackQuotes textCenter">BEST ASSESSMENT SYSTEM</h4>
-                    <img src={Star} alt="Stars" className="stars" />
-                    <div className="feedbackParagraph">Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. 
-                        Sunt qui esse pariatur duis deserunt mollit dolore cillum minim tempor enim. Elit aute irure tempor cupidatat incididunt sint deserunt ut voluptate aute id deserunt nisi.
-                        Elit aute irure tempor cupidatat incididunt sint deserunt ut voluptate aute id deserunt nisi.
-                    </div>
-                </div>
-            </div>
-            
-            
-        </Wrapper>
-        
-    )
+  return (
+    <Wrapper className="feedbackWrapper">
+      <Spacer y={9.6} />
+      <img src={bgFeedback} alt="Cover" className="coverImage" />
+      <h2 className="feedbackCaption textCenter">
+        What learners and <br /> parents are saying{" "}
+      </h2>
+      <Spacer y={2.4} />
+      <div className="miniFeedbackCaption t1 textCenter">Hear it from them</div>
+      <div className="feedbackCards">
+        <div className="card">
+          <img src={quote} alt="Two Quotes" className="quotes" />
+          <Spacer y={2.4} />
+          <h4 className="feedbackQuotes textCenter">BEST ASSESSMENT SYSTEM</h4>
+          <img src={Star} alt="Stars" className="stars" />
+          <div className="feedbackParagraph">
+            Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. Sunt
+            qui esse pariatur duis deserunt mollit dolore cillum minim tempor
+            enim. Elit aute irure tempor cupidatat incididunt sint deserunt ut
+            voluptate aute id deserunt nisi. Elit aute irure tempor cupidatat
+            incididunt sint deserunt ut voluptate aute id deserunt nisi.
+          </div>
+        </div>
+        <div className="card">
+          <img src={quote} alt="Two Quotes" className="quotes" />
+          <Spacer y={2.4} />
+          <h4 className="feedbackQuotes textCenter">BEST ASSESSMENT SYSTEM</h4>
+          <img src={Star} alt="Stars" className="stars" />
+          <div className="feedbackParagraph">
+            Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. Sunt
+            qui esse pariatur duis deserunt mollit dolore cillum minim tempor
+            enim. Elit aute irure tempor cupidatat incididunt sint deserunt ut
+            voluptate aute id deserunt nisi. Elit aute irure tempor cupidatat
+            incididunt sint deserunt ut voluptate aute id deserunt nisi.
+          </div>
+        </div>
+        <div className="card">
+          <img src={quote} alt="Two Quotes" className="quotes" />
+          <Spacer y={2.4} />
+          <h4 className="feedbackQuotes textCenter">BEST ASSESSMENT SYSTEM</h4>
+          <img src={Star} alt="Stars" className="stars" />
+          <div className="feedbackParagraph">
+            Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. Sunt
+            qui esse pariatur duis deserunt mollit dolore cillum minim tempor
+            enim. Elit aute irure tempor cupidatat incididunt sint deserunt ut
+            voluptate aute id deserunt nisi. Elit aute irure tempor cupidatat
+            incididunt sint deserunt ut voluptate aute id deserunt nisi.
+          </div>
+        </div>
+      </div>
+    </Wrapper>
+  );
 };
 export default Feedback;

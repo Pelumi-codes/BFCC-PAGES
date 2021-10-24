@@ -4,9 +4,8 @@ import Spacer from "components/Spacer";
 import Button from "components/Button";
 import { Link } from "react-router-dom";
 import textPrototype from "Images/textPrototype.jpeg";
-import groupStar from "Images/groupStar.svg"
-import groupBook from "Images/groupBook.svg"
-
+import groupStar from "Images/groupStar.svg";
+import groupBook from "Images/groupBook.svg";
 
 const Wrapper = Styled.div`
 Height: 9.6rem;
@@ -90,18 +89,18 @@ const Header = ({ text }) => {
         </Link>
       </div>
       <div className="headerGroup">
-      <Spacer y={9.6} />
+        <Spacer y={9.6} />
         <div className="headerCaption">
-            Knowledge <br /> Testing for{" "}
-            <span className="active">
+          Knowledge <br /> Testing for{" "}
+          <span className="active">
             Active <br />
             Learning.
-            </span>
+          </span>
         </div>
         <Spacer y={2.4} />
         <div className="headerDescription">
-                Online Assessment that fosters effective learning and achieve <br />academic
-                excellence.
+          Online Assessment that fosters effective learning and achieve <br />
+          academic excellence.
         </div>
         <Spacer y={4.2} />
         <Link to="/start-here" className="startHere">
@@ -114,13 +113,16 @@ const Header = ({ text }) => {
           ></Button>
         </Link>
         <Spacer y={12.2} />
-        <img src={textPrototype} alt="text prototype" className="prototype" alignEnd/>
+        <img
+          src={textPrototype}
+          alt="text prototype"
+          className="prototype"
+          alignEnd
+        />
         {/* <img src={iphone12} alt="iphone12" className="iphone" /> */}
         <img src={groupStar} alt="star" className="star" />
         <img src={groupBook} alt="star" className="book" />
-        
-        </div>
-      
+      </div>
     </Wrapper>
   );
 };
