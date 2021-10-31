@@ -1,7 +1,7 @@
 import Contact_Us from "Pages/Contact_Us";
 import FAQ from "Pages/FAQ";
 import Landing from "Pages/Landing";
-import Policy_Privacy from "Pages/Policy_Privacy";
+import PolicyPrivacy from "Pages/PolicyPrivacy";
 import React from "react";
 import {
   BrowserRouter as Router,
@@ -19,10 +19,9 @@ function App() {
           <Route exact path="/" component={Landing} />
           <Route path="/faq" component={FAQ} />
           <Route path="/contact-us" component={Contact_Us} />
-          <Route path="/policy-privacy" component={Policy_Privacy} />
+          <Route path="/policy-privacy" component={PolicyPrivacy} />
         </Switch>
-      </div>{" "}
-      mkio098•S
+      </div>
     </Router>
   );
 }

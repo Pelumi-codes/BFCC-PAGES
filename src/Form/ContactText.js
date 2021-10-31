@@ -14,6 +14,16 @@ background-color: var(--primary_main);
     color: var(--white); 
 }
 
+@media(max-width: 768px) {
+
+  height: auto;
+
+  .contactTextCaption {
+    font-size: 3.6rem;
+    
+}
+}
+
 `;
 
 const ContactText = () => {

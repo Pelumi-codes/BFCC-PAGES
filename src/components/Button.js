@@ -9,11 +9,15 @@ const Wrapper = styled.button`
   align-items: center;
   border: none;
   padding: ${(props) =>
-    props.padding ? "2.2rem 3.6rem" : props.maxPad ? "2.2rem 8rem" : "2.2rem 8.4rem" };
+    props.padding
+      ? "2.2rem 3.6rem"
+      : props.maxPad
+      ? "2.2rem 8rem"
+      : "2.2rem 8.4rem"};
   outline: none;
-  height: ${(props) =>
-    props.big ? "6.4rem" : "4.8rem"};
-  width: ${(props) => (props.fullWidth ? "144px" : "max-content")};
+  height: ${(props) => (props.big ? "6.4rem" : "4.8rem")};
+  width: ${(props) =>
+    props.fullWidth ? "14.4rem" : props.maxWidth ? "100%" : "max-content"};
   background-color: ${(props) =>
     props.white ? "var(--accent_1_main)" : "var(--primary_main)"};
   color: ${(props) =>
@@ -32,7 +36,6 @@ const Wrapper = styled.button`
     text-align: center;
     width: max-content;
     height: 2rem;
-
   }
 `;
 

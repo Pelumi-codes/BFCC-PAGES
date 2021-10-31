@@ -1,18 +1,18 @@
 import React from "react";
 import Navbar from "components/Navbar";
 import Footer from "components/Footer";
-import Policy_Text from "components/Policy/Policy_Text";
+import PolicyText from "components/Policy/PolicyText";
 import Policy from "components/Policy/Policy";
 
-const Policy_Privacy = () => {
+const PolicyPrivacy = () => {
   return (
     <div>
       <Navbar />
-      <Policy_Text />
+      <PolicyText />
       <Policy />
       <Footer />
     </div>
   );
 };
 
-export default Policy_Privacy;
+export default PolicyPrivacy;

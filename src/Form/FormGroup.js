@@ -1,178 +1,250 @@
 import React, { useState } from "react";
+import { useFormik } from "formik";
 import Styled from "styled-components";
 import Button from "components/Button";
 import Elephant from "../Images/Elephant.svg";
 import globe from "../Images/globe.svg";
-import tabGirl from "../Images/tabGirl.jpeg";
+import tabGirl from "../Images/tabGirl.png";
 import Spacer from "components/Spacer";
 
 const Wrapper = Styled.div`
-height : 0px;
-position: relative;
-
-
-input{
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 16px;
-  letter-spacing: 0em;
-  text-align: left;
-  padding: 20px 0 20px 16px;
-  border: 1px solid #EFEFEF;
-  border-radius: 4px;
-  width:100%;
-  margin-top: 5px;
-}
-
-label {
-  position: absolute;
-  transform: translateY(10px);
-  color: var(--grey_6);
-  padding: 2px 0 7px 16px;
-}
-#message { 
-  padding: 20px 0 60px 16px;
-}
-.contactDescription{
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 28px;
-  letter-spacing: 0em;
-  text-align: left;
-  width: 40%;
-  padding-left: 11.9rem;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  padding-left: 12.4rem; 
-}
-
-.contactUsFormImage {
-  display : grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 14rem;
   position: relative;
- 
-}
-.globe {
-  width: 270px;
-  height:382px;
-  position: absolute;
-  bottom: 200px;
-  right: 90px;
-  z-index: -1;
+
+  .fieldWrapper {
+    padding: 0 2rem;
+    border: 1px solid #EFEFEF;
+    border-radius: 4px;
+    width: 100%;
+    height: 5.6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+  }
+
+  .fieldWrapperText {
+    padding: 0 2rem;
+    border: 1px solid #EFEFEF;
+    border-radius: 4px;
+    width: 100%;
+    height: 9.6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+  }
+
+  input {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: 0em;
+    text-align: left;
+    border: none;
+    background-color: transparent;
+  }
+
+  
+
+  textarea {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: 0em;
+    text-align: left;
+    border: none;
+    background-color: transparent;
+  }
+
+  label {
+    color: var(--grey_6);
+    margin-bottom: 0.6rem;
+  }
+
+  // #message { 
+  //   padding: 1.6rem 2rem;
+   
+  // }
+
+  .contactDescription {
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
+    letter-spacing: 0em;
+    text-align: left;
+    width: 40%;
+   
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+  
+  }
+
+  .contactUsFormImage {
+    display : grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 14rem;
+    position: relative;
+  }
+
+  .error {
+    color: red;
+    margin-top: 0.6rem;
 }
 
-.tabgirl{
-  width: 450px;
-  height:450px;
-  position: relative;
-  z-index:2;
-  right:30px;
-}
+  .globe {
+    width: 270px;
+    height:382px;
+    position: absolute;
+    bottom: 200px;
+    right: 118px;
+    z-index: -1;
+  }
 
-.elephant {
-  width: 322px;
-  height:415px;
-  position: absolute;
-  top:150px;
-  right:3px;
-  z-index: 3;
-}
+  .tabgirl {
+    width: 450px;
+    height: 450px;
+    position: relative;
+    z-index: 2;
+    right: 30px;
+  }
 
-.success-message {
-  color: green;
-}
+  .elephant {
+    width: 322px;
+    height: 415px;
+    position: absolute;
+    bottom: 0;
+    right: 3px;
+    z-index: 3;
+  }
 
-.inputValidation {
-  color: red;
-}
+  @media(max-width: 768px) {
+
+    height: auto;
+
+    .contactUsFormImage {
+      grid-template-columns: 1fr;
+    }
+  
+    .tabgirl,
+    .elephant,
+    .globe {
+      display: none;
+    }
+  
+    .form {
+      padding-left: 0; 
+    }
+
+    .contactDescription {
+      font-size: 16px;
+      width: 85%;
+      text-align: center;
+      margin: auto;
+    }
+
+    
+  }
+  
 
 `;
 
+const onSubmit = (values) => {};
+
+const validate = (values) => {
+  // values.name values.emailAddress values.phoneNumber values.message
+  // errors.name errors.emailAddress errors.phoneNumber errors.message
+  // errors.name = 'This field os required'.
+
+  let errors = {};
+  if (!values.name) {
+    errors.name = "This is required";
+  }
+  if (!values.emailAddress) {
+    errors.emailAddress = "This is required";
+  } else if (
+    !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.emailAddress)
+  ) {
+    errors.emailAddress = "Invalid email address";
+  }
+  if (!values.phoneNumber) {
+    errors.phoneNumber = "This is required";
+  }
+  if (!values.message) {
+    errors.message = "This is required";
+  }
+
+  return errors;
+};
+
+const initialValues = {
+  name: "",
+  emailAddress: "",
+  phoneNumber: "",
+  message: "",
+};
+
 const FormGroup = () => {
-  const [values, setValues] = useState({
+  const [showLabel, setShowLabel] = useState({
     username: "",
     emailAddress: "",
     phoneNumber: "",
     message: "",
   });
 
-  const [showLabel, setShowLabel] = useState({
-    username: false,
-    emailAddress: false,
-    phoneNumber: false,
-    message: false,
+  const formik = useFormik({
+    initialValues,
+    onSubmit,
+    validate,
   });
-
-  const [submitted, setSubmitted] = useState(false);
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    if (
-      values.username &&
-      values.emailAddress &&
-      values.phoneNumber &&
-      values.message
-    ) {
-      setValid(true);
-    }
-    setSubmitted(true);
-  };
-
-  const [valid, setValid] = useState(false);
-
-  const handleInputChange = (event) => {
-    const { value, name } = event.target;
-    console.log(name);
-
-    if (value) {
-      setShowLabel({ ...showLabel, [name]: true });
-    } else {
-      setShowLabel({ ...showLabel, [name]: false });
-    }
-    setValues((values) => ({
-      ...values,
-      [name]: value,
-    }));
-  };
 
   return (
     <Wrapper className="form-container">
       <Spacer y={9.8} />
-      <div className="contactDescription">
+      <div className="contactDescription container">
         Our team is happy to answer your questions. Fill out the form and we’ll
         be in touch as soon as possible.
       </div>
       <Spacer y={5.4} />
       <div className="contactUsFormImage">
-        <form className="register-form" onSubmit={handleSubmit}>
-          {submitted && valid ? (
-            <div class="success-message">Submitted!</div>
-          ) : null}
-          <div style={{ position: "relative" }}>
-            {showLabel.username && <label htmlFor="name">Name</label>}
+        <form
+          className="register-form container"
+          onSubmit={formik.handleSubmit}
+        >
+          {/* {submitted ? <div class="success-message">Submitted!</div> : null} */}
+          <div className="fieldWrapper">
+            {formik.values.name && (
+              <label htmlFor="name" className="name">
+                Name
+              </label>
+            )}
             <input
               id="name"
               class="form-field"
               type="text"
               placeholder="Name"
-              name="username"
-              value={values.username}
-              onChange={handleInputChange}
+              name="name"
+              value={formik.values.name}
+              onChange={(e) => {
+                formik.handleChange(e);
+              }}
+              onBlur={formik.handleBlur}
             />
           </div>
-          {submitted && !values.username ? (
-            <span className="inputValidation"> Please enter your name </span>
+          {formik.touched.name && formik.errors.name ? (
+            <div className="error">{formik.errors.name}</div>
           ) : null}
-
           <Spacer y={2.4} />
-          <div style={{ position: "relative" }}>
-            {showLabel.emailAddress && (
-              <label htmlFor="email-address">Email</label>
+          <div className="fieldWrapper">
+            {formik.values.emailAddress && (
+              <label htmlFor="emailAddress" className="email">
+                Email Address
+              </label>
             )}
             <input
               id="email-address"
@@ -180,20 +252,22 @@ const FormGroup = () => {
               type="text"
               placeholder="Email Address"
               name="emailAddress"
-              value={values.emailAddress}
-              onChange={handleInputChange}
+              value={formik.values.emailAddress}
+              onChange={(e) => {
+                formik.handleChange(e);
+              }}
+              onBlur={formik.handleBlur}
             />
           </div>
-          {submitted && !values.emailAddress ? (
-            <span className="inputValidation">
-              {" "}
-              Please enter an email address{" "}
-            </span>
+          {formik.touched.emailAddress && formik.errors.emailAddress ? (
+            <div className="error">{formik.errors.emailAddress} </div>
           ) : null}
           <Spacer y={2.4} />
-          <div style={{ position: "relative" }}>
-            {showLabel.phoneNumber && (
-              <label htmlFor="phone-number">Phone Number</label>
+          <div className="fieldWrapper">
+            {formik.values.phoneNumber && (
+              <label htmlFor="phoneNumber" className="phone">
+                Phone Number
+              </label>
             )}
             <input
               id="phone-number"
@@ -201,39 +275,51 @@ const FormGroup = () => {
               type="text"
               placeholder="Phone Number"
               name="phoneNumber"
-              value={values.phoneNumber}
-              onChange={handleInputChange}
+              value={formik.values.phoneNumber}
+              onChange={(e) => {
+                formik.handleChange(e);
+              }}
+              onBlur={formik.handleBlur}
             />
           </div>
-          {submitted && !values.phoneNumber ? (
-            <span className="inputValidation">
-              {" "}
-              Please enter your phone number{" "}
-            </span>
+          {formik.touched.phoneNumber && formik.errors.phoneNumber ? (
+            <div className="error">{formik.errors.phoneNumber}</div>
           ) : null}
           <Spacer y={2.4} />
-          <div style={{ position: "relative" }}>
-            {showLabel.message && <label htmlFor="message">Message</label>}
-            <input
+          <div className="fieldWrapperText">
+            {formik.values.message && (
+              <label htmlFor="message" className="message">
+                Message
+              </label>
+            )}
+            <textarea
               id="message"
               class="form-field"
               type="text"
               placeholder="Message"
               name="message"
-              value={values.message}
-              onChange={handleInputChange}
+              value={formik.values.message}
+              onChange={(e) => {
+                formik.handleChange(e);
+              }}
+              onBlur={formik.handleBlur}
             />
           </div>
-          {submitted && !values.message ? (
-            <span className="inputValidation"> Please enter your message</span>
+          {formik.touched.message && formik.errors.message ? (
+            <div className="error">{formik.errors.message}</div>
           ) : null}
           <Spacer y={2.4} />
           <Button className="btnForm" text="Submit" long maxWidth big></Button>
         </form>
-        <img src={tabGirl} alt=" A girl with a tab" className="tabgirl" />
-        <img src={Elephant} alt="Elephant" className="elephant" />
-        <img src={globe} alt="Globe" className="globe" />
+
+        <div>
+          <img src={tabGirl} alt=" A girl with a tab" className="tabgirl" />
+          <img src={globe} alt="Globe" className="globe" />
+        </div>
       </div>
+
+      <img src={Elephant} alt="Elephant" className="elephant" />
+      <Spacer y={17.2} />
     </Wrapper>
   );
 };

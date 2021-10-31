@@ -7,7 +7,6 @@ background-color: var(--primary_main);
 color: #fff;
 height: 47.2rem;
 position: relative;
-top: 112rem;
 
 .line {
     width: 124.8rem;
@@ -22,8 +21,33 @@ font-weight: 400;
 line-height: 24px;
 letter-spacing: 0em;
 
-
 }
+
+@media(max-width: 768px) {
+//    height: auto;
+.flexRow {
+    flex-direction: column;
+}
+
+.footerCaption {
+    width: 100%;
+    font-size: 10px;
+}
+
+.footerCopyright{
+    font-size: 14px;
+}
+// .home,
+// .faq,
+// .contact {
+//     padding: 1rem;
+// }
+
+.line {
+    width: 30.8rem;
+}
+
+}  
 `;
 
 const Footer = () => {
@@ -31,11 +55,17 @@ const Footer = () => {
     <Wrapper className="container">
       <Spacer y={9.6} />
       <div className="footerContact p1 flexRow alignCenter justifyCenter">
-        <Link to="/">Home</Link>
+        <Link to="/" className="home">
+          Home
+        </Link>
         <Spacer x={4.8} />
-        <Link to="/contact-us">Contact Us</Link>
+        <Link to="/contact-us" className="contact">
+          Contact Us
+        </Link>
         <Spacer x={4.8} />
-        <Link to="/faq">Help/FAQ</Link>
+        <Link to="/faq" className="faq">
+          Help/FAQ
+        </Link>
       </div>
       <Spacer y={14.4} />
       <div className="line">

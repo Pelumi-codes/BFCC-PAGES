@@ -3,8 +3,8 @@ import Spacer from "components/Spacer";
 import Styled from "styled-components";
 
 const Wrapper = Styled.div`
-height: 1400px;
 padding: 0 72px;
+
 .policyList{
     font-family: Platform;
     font-size: 22px;
@@ -20,12 +20,28 @@ font-style: normal;
 font-weight: 400;
 line-height: 28px;
 letter-spacing: 0em;
-text-align: left;
+text-align: justify;
 }
 
-.privacyContainer{
-    padding: 0 72px;
+
+@media (max-width: 768px) {
+  height: auto;
+  padding: 0 2.4rem;
+
+  .policyDescription{
+    font-size: 14px;
+    width: 100%;
+    line-height: 2.4rem;
+    text-align: justify;
+    margin: auto;
+  }
+
+  .policyList {
+    font-size: 18px;
+  }
 }
+
+
 `;
 
 const Policy = () => {

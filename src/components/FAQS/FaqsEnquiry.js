@@ -5,6 +5,10 @@ const Wrapper = Styled.div`
 `;
 
 const FaqsEnquiry = () => {
-  return <div></div>;
+  return (
+    <Wrapper>
+      <div></div>
+    </Wrapper>
+  );
 };
 export default FaqsEnquiry;

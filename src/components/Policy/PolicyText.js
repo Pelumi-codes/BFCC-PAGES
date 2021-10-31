@@ -2,7 +2,7 @@ import Spacer from "components/Spacer";
 import Styled from "styled-components";
 
 const Wrapper = Styled.div`
-Height: 38.4rem;
+height: 38.4rem;
 background-color: var(--primary_main);
 
 .policyTextCaption {
@@ -14,9 +14,17 @@ background-color: var(--primary_main);
     color: var(--white); 
 }
 
+@media (max-width: 768px) {
+  height: auto;
+
+  .policyTextCaption {
+    font-size: 3.6rem;
+    line-height: 5.4rem;
+    
+}
 `;
 
-const Policy_Text = () => {
+const PolicyText = () => {
   return (
     <Wrapper>
       <Spacer y={10.1} />
@@ -26,4 +34,4 @@ const Policy_Text = () => {
   );
 };
 
-export default Policy_Text;
+export default PolicyText;

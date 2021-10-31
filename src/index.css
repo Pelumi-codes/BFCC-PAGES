@@ -24,7 +24,7 @@
   --accent_2_dark: #a95f05;
   --accent_2_darker: #7f4804;
   --accent_3_lighter: #80ebed;
-  --accent_4_lighter: #80ECEE;
+  --accent_4_lighter: #80ecee;
   --accent_3_light: #56e5e8;
   --accent_3_main: #01d8dc;
   --accent_3_dark: #019093;
@@ -39,7 +39,7 @@
   --black_3: #1a1a1a;
   --black_4: #161616;
   --black_5: #111111;
-  --white:#ffffff;
+  --white: #ffffff;
 }
 
 * {
@@ -272,4 +272,10 @@ p,
 .container {
   max-width: 100vw;
   padding: 0 9.6rem;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 0 2.4rem;
+  }
 }

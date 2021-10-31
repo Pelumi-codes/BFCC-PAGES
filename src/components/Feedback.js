@@ -7,8 +7,7 @@ import bgFeedback from "Images/bgFeedback.svg";
 const Wrapper = Styled.div`
 position: relative;
 background: transparent;
-height:90rem;
-top: 102.5rem;
+height: 90rem;
 
 .coverImage {
     position: absolute;
@@ -69,6 +68,25 @@ top: 102.5rem;
     letter-spacing: 0em;
     text-align: center;
     width:90%;
+}
+
+@media (max-width: 768px) {
+    height: auto;
+
+    .feedbackCaption {
+        font-size: 3.6rem;
+    }
+
+    .feedbackCards {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 4.8rem;
+        margin: 8rem  auto;
+    
+    }
+    .coverImage {
+        display: none;
+    }
 }
 `;
 

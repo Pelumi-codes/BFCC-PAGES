@@ -25,21 +25,41 @@ background-color: var(--primary_main);
 
 }
 
-`
+@media (max-width: 768px) {
+   height: auto;
+  
+    .faqsheaderCaption {
+      font-size:  3.6rem;
+      line-height: 5.2rem;
+    }
+  
+    .faqsheaderDescription {
+      font-size: 1.8rem;
+      width: 60%;
+      text-align: center;
+      margin: auto;
+      padding-bottom: 2rem;
+  
+      br {
+        display: none;
+      }
+  }
+
+`;
 
 const FaqsHeader = () => {
-    return (
-        <Wrapper>
-            <Spacer y={9.6} />
-            <h2 className="faqsheaderCaption textCenter">Help center </h2>
-            <Spacer y={2.4} />
-            <div className="faqsheaderDescription">Read through our FAQs below. If you need further assistance, email <br />
-                admin@bfccentre.com or call 0203 754 8402 
-            </div>
-        </Wrapper>
-       
-    )
+  return (
+    <Wrapper>
+      <Spacer y={9.6} />
+      <h2 className="faqsheaderCaption textCenter">Help center </h2>
+      <Spacer y={2.4} />
+      <div className="faqsheaderDescription">
+        Read through our FAQs below. If you need further assistance, email
+        <br />
+        admin@bfccentre.com or call 0203 754 8402
+      </div>
+    </Wrapper>
+  );
 };
 
 export default FaqsHeader;
-
