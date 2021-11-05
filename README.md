@@ -1,4 +1,4 @@
-<a href="https://bfcc-client.vercel.app/">Link to code</a>
+<a href="https://bfcc-client.vercel.app/">Code Link</a>
 
 
 # Getting Started with Create React App
